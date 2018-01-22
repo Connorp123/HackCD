@@ -64,4 +64,17 @@ canvas {
   width: 160px;
   height: 120px;
   margin: 20px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.preview-label::after {
+  content: attr(data-content);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Work Sans', sans-serif;
+}
+.preview-label{
+  text-align: center;
 }
