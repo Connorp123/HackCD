@@ -38,26 +38,31 @@ function setup() {
   }
 
   // Create the capturer
-  capturer = new CCapture({
-    format: 'gif',
-    workersPath: 'lib/',
-    famerate: MAIN_FRAME_RATE,
-    verbose: true,
-    timeLimit: 2
-  });
+  // capturer = new CCapture({
+  //   format: 'gif',
+  //   workersPath: 'lib/',
+  //   famerate: MAIN_FRAME_RATE,
+  //   verbose: true,
+  //   timeLimit: 2
+  // });
 }
 
 function draw() {
-  if(CAPTURING) {
-    capturer.capture(gifCanvas);
-    captureTimer--;
-    console.log(captureTimer);
-    if(captureTimer <= 0) {
-      CAPTURING = false;
-      capturer.stop();
-      capturer.save();
-    }
-  }
+  // if(CAPTURING) {
+  //   html2canvas(document.querySelector("#main-camera"), {allowTaint: true}).then(function (canvass) {
+  //     // console.log(canvass);
+  //     gifCanvas = canvass;
+  //   });
+  //
+  //   capturer.capture(gifCanvas);
+  //   captureTimer--;
+  //   console.log(captureTimer);
+  //   if(captureTimer <= 0) {
+  //     CAPTURING = false;
+  //     capturer.stop();
+  //     capturer.save();
+  //   }
+  // }
 }
 
 function createPreview(filterNum) {
