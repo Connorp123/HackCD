@@ -24,13 +24,13 @@ $(document).ready(function () {
   });
 
   //click main, back to no-filter
-  $('#main-camera').hover(
-    function() {
-      var filter = 'no-filter';
-      $('#main-camera').removeClass().addClass(filter);
-    }, function() {
-      var filter = $('#main-camera').attr("filter");
-      $('#main-camera').removeClass().addClass(filter);
-    }
-  );
+  // $('#main-camera').hover(
+  //   function() {
+  //     var filter = 'no-filter';
+  //     $('#main-camera').removeClass().addClass(filter);
+  //   }, function() {
+  //     var filter = $('#main-camera').attr("filter");
+  //     $('#main-camera').removeClass().addClass(filter);
+  //   }
+  // );
 });
