@@ -10,11 +10,17 @@ $(document).ready(function () {
   $('.preview-camera').click(function() {
     var filter = $(this).data('filter');
     $('#main-camera').removeClass().addClass(filter);
+    $('#main-camera').attr("filter", filter)
   });
 
   //click main, back to no-filter
-  // $('#main-camera').click(function() {
-  //   var filter = 'no-filter';
-  //   $('#main-camera').addClass(filter);
-  // });
+  $('#main-camera').hover(
+    function() {
+      var filter = 'no-filter';
+      $('#main-camera').removeClass().addClass(filter);
+    }, function() {
+      var filter = $('#main-camera').attr("filter");
+      $('#main-camera').removeClass().addClass(filter);
+    }
+  );
 });
