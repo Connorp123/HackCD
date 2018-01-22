@@ -11,16 +11,48 @@ canvas {
 #content{
   width: 80vw;
   margin: auto;
+  margin-top: 20px;
 }
 
 #title{
   text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+}
+
+#takePhotoBtn{
+  height: 40px;
+  width: 175px;
+  border-radius: 20px;
+  border: solid 1px #0099ff;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+#takePhotoBtn:hover {
+  background-color: #0099ff;
+}
+#btn-text:hover {
+  color: #fff;
+}
+#btn-text{
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #0099ff;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  font-family: 'Work Sans', sans-serif;
 }
 
 #main-camera{
   width: 480px;
   height: 360px;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 #preview-container{
