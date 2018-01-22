@@ -1,4 +1,7 @@
 var FILTERS = [
+  { "name"  : "no filter",
+    "class" : "no-filter"
+  },
   { "name"  : "1997",
     "class" : "_1977"
   },
