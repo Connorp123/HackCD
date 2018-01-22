@@ -9,10 +9,11 @@ function createSketch(idName, type) {
   var s = function( p ) { // p could be any variable name
 
     p.setup = function() {
-      if (type == 1) {
+      if (type === 1) {
         p.createCanvas(480, 360);
       } else {
         p.createCanvas(160, 120);
+        p.frameRate(15);
       }
 
       capture = p.createCapture(p.VIDEO);
@@ -31,5 +32,5 @@ function createSketch(idName, type) {
 
   };
   var myp5 = new p5(s, idName);
-
+  return myp5;
 }

@@ -5,15 +5,19 @@ var PREVIEW_CONTAINER_ID = "preview-container";
 var FIGURE_ID_PREFIX = "camera-";
 var CANVAS_ID_PREFIX = "canvas-";
 
+var canvases = [];
+
 //type of 1 is main, type of 2 is preview
 function setup() {
 
   // Create main canvas
-  createSketch('main-canvas', MAIN);
+  var s = createSketch('main-canvas', MAIN);
+  canvases.push(s);
 
   // Create preview canvases
   for(i in FILTERS) {
-    createPreview(i);
+    s = createPreview(i);
+    canvases.push(s);
   }
 }
 
@@ -45,5 +49,5 @@ function createPreview(filterNum) {
   previewContainer.appendChild(fig);
 
   // Create the sketch
-  createSketch(canvasId, PREVIEW);
+  return createSketch(canvasId, PREVIEW);
 }
