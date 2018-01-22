@@ -1,8 +1,14 @@
 //type of 1 is main, type of 2 is preview
-
 function setup() {
-    createSketch('main-canvas', 1);
-    createSketch('canvas-1997', 2);
+
+  // Create main canvas
+  createSketch('main-canvas', 1);
+
+  // Create preview canvases
+  for(i in FILTERS) {
+    console.log(FILTERS[i].name + ", " + FILTERS[i].class);
+  }
+
 }
 
 function draw() {

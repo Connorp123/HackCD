@@ -1,3 +1,5 @@
+// type = 1 - main, 2 - preview
+
 function createSketch(idName, type) {
 
   var capture;
