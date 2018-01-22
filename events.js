@@ -7,13 +7,11 @@ $(document).ready(function () {
       console.log(canvass);
       gifCanvas = canvass;
 
-      // hahahaha
       CAPTURING = true;
       captureTimer = MAIN_FRAME_RATE * DURATION;
       capturer.start();
     });
-
-
+    
   });
 
   //Click preview, change main to that filter
