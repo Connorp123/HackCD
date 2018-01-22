@@ -1,4 +1,4 @@
-function createSketch(idName) {
+function createSketch(idName, type) {
 
   var capture;
 
@@ -7,7 +7,11 @@ function createSketch(idName) {
   var s = function( p ) { // p could be any variable name
 
     p.setup = function() {
-      p.createCanvas(320, 240);
+      if (type == 1) {
+        p.createCanvas(320, 240);
+      } else {
+        p.createCanvas(160, 120);
+      }
 
       capture = p.createCapture(p.VIDEO);
       capture.size(160, 120);
@@ -16,7 +20,11 @@ function createSketch(idName) {
 
     p.draw = function() {
       p.background(255);
-      p.image(capture, 0, 0, 320, 240);
+      if (type == 1) {
+        p.image(capture, 0, 0, 320, 240);
+      } else {
+        p.image(capture, 0, 0, 160, 120);
+      }
     };
 
   };
