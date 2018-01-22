@@ -9,11 +9,12 @@ function createSketch(idName, type) {
   var s = function( p ) { // p could be any variable name
 
     p.setup = function() {
-      if (type === 1) {
+      if (type === MAIN) {
         p.createCanvas(480, 360);
+        p.frameRate(MAIN_FRAME_RATE);
       } else {
         p.createCanvas(160, 120);
-        p.frameRate(15);
+        p.frameRate(PREVIEW_FRAME_RATE);
       }
 
       capture = p.createCapture(p.VIDEO);
@@ -30,7 +31,12 @@ function createSketch(idName, type) {
       }
     };
 
+    if(type === MAIN) {
+      p.saveGif = function () {
+        saveFrames(FILE_NAME, EXT, DURATION, MAIN_FRAME_RATE);
+      }
+    }
+
   };
-  var myp5 = new p5(s, idName);
-  return myp5;
+  return new p5(s, idName);
 }

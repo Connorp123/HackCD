@@ -1,3 +1,4 @@
+// For creating canvases/containers
 var MAIN = 1;
 var PREVIEW = 2;
 var PREVIEW_CAMERA_CLASS = "preview-camera";
@@ -5,19 +6,26 @@ var PREVIEW_CONTAINER_ID = "preview-container";
 var FIGURE_ID_PREFIX = "camera-";
 var CANVAS_ID_PREFIX = "canvas-";
 
-var canvases = [];
+// For saving gifs
+var FILE_NAME = "myGif";
+var EXT = "jpg";
+var DURATION = 1;
+var MAIN_FRAME_RATE = 15;
+var PREVIEW_FRAME_RATE = 15;
+
+var mainCanvas;
+var previewCanvases = [];
 
 //type of 1 is main, type of 2 is preview
 function setup() {
 
   // Create main canvas
-  var s = createSketch('main-canvas', MAIN);
-  canvases.push(s);
+  mainCanvas = createSketch('main-canvas', MAIN);
 
   // Create preview canvases
   for(i in FILTERS) {
     s = createPreview(i);
-    canvases.push(s);
+    previewCanvases.push(s);
   }
 }
 
@@ -51,3 +59,5 @@ function createPreview(filterNum) {
   // Create the sketch
   return createSketch(canvasId, PREVIEW);
 }
+
+
