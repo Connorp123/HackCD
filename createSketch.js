@@ -8,7 +8,7 @@ function createSketch(idName, type) {
 
     p.setup = function() {
       if (type == 1) {
-        p.createCanvas(320, 240);
+        p.createCanvas(480, 360);
       } else {
         p.createCanvas(160, 120);
       }
@@ -21,7 +21,7 @@ function createSketch(idName, type) {
     p.draw = function() {
       p.background(255);
       if (type == 1) {
-        p.image(capture, 0, 0, 320, 240);
+        p.image(capture, 0, 0, 480, 360);
       } else {
         p.image(capture, 0, 0, 160, 120);
       }
