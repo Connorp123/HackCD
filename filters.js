@@ -2,7 +2,7 @@ var FILTERS = [
   { "name"  : "no filter",
     "class" : "no-filter"
   },
-  { "name"  : "1997",
+  { "name"  : "1977",
     "class" : "_1977"
   },
   { "name"  : "Aden",

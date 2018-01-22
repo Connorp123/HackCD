@@ -21,6 +21,7 @@ var CAPTURING = false;
 var captureTimer = MAIN_FRAME_RATE * DURATION;
 
 var mainCanvasElement;
+var gifCanvas;
 
 //type of 1 is main, type of 2 is preview
 function setup() {
@@ -48,7 +49,7 @@ function setup() {
 
 function draw() {
   if(CAPTURING) {
-    capturer.capture(mainCanvasElement);
+    capturer.capture(gifCanvas);
     captureTimer--;
     console.log(captureTimer);
     if(captureTimer <= 0) {

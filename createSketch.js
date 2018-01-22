@@ -10,7 +10,7 @@ function createSketch(idName, type) {
 
     p.setup = function() {
       if (type === MAIN) {
-        p.createCanvas(480, 360);
+        p.createCanvas((windowWidth*.4), (windowWidth*.4)/1.333);
         p.frameRate(MAIN_FRAME_RATE);
       } else {
         p.createCanvas(160, 120);
@@ -25,7 +25,7 @@ function createSketch(idName, type) {
     p.draw = function() {
       p.background(255);
       if (type == 1) {
-        p.image(capture, 0, 0, 480, 360);
+        p.image(capture, 0, 0, (windowWidth*.4), (windowWidth*.4)/1.333);
       } else {
         p.image(capture, 0, 0, 160, 120);
       }
@@ -35,6 +35,12 @@ function createSketch(idName, type) {
       p.saveGif = function () {
         capturer.start();
       };
+    }
+
+    if(type === MAIN) {
+      p.windowResized = function() {
+          p.resizeCanvas((windowWidth*.4), (windowWidth*.4)/1.333);
+      }
     }
 
   };
