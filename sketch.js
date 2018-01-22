@@ -7,16 +7,20 @@ var FIGURE_ID_PREFIX = "camera-";
 var CANVAS_ID_PREFIX = "canvas-";
 var ITEM_CLASS = "preview-item";
 var LABEL_CLASS = "preview-label";
+var mainCanvas;
+var previewCanvases = [];
 
 // For saving gifs
 var FILE_NAME = "myGif";
 var EXT = "jpg";
-var DURATION = 1;
+var DURATION = 3;
 var MAIN_FRAME_RATE = 15;
 var PREVIEW_FRAME_RATE = 15;
+var capturer;
+var CAPTURING = false;
+var captureTimer = MAIN_FRAME_RATE * DURATION;
 
-var mainCanvas;
-var previewCanvases = [];
+var mainCanvasElement;
 
 //type of 1 is main, type of 2 is preview
 function setup() {
@@ -24,15 +28,35 @@ function setup() {
   // Create main canvas
   mainCanvas = createSketch('main-canvas', MAIN);
 
+  mainCanvasElement = $("#main-canvas canvas")[0];
+
   // Create preview canvases
   for(i in FILTERS) {
     s = createPreview(i);
     previewCanvases.push(s);
   }
+
+  // Create the capturer
+  capturer = new CCapture({
+    format: 'gif',
+    workersPath: 'lib/',
+    famerate: MAIN_FRAME_RATE,
+    verbose: true,
+    timeLimit: 2
+  });
 }
 
 function draw() {
-
+  if(CAPTURING) {
+    capturer.capture(mainCanvasElement);
+    captureTimer--;
+    console.log(captureTimer);
+    if(captureTimer <= 0) {
+      CAPTURING = false;
+      capturer.stop();
+      capturer.save();
+    }
+  }
 }
 
 function createPreview(filterNum) {

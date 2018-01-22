@@ -33,8 +33,8 @@ function createSketch(idName, type) {
 
     if(type === MAIN) {
       p.saveGif = function () {
-        saveFrames(FILE_NAME, EXT, DURATION, MAIN_FRAME_RATE);
-      }
+        capturer.start();
+      };
     }
 
   };

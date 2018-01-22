@@ -2,8 +2,10 @@ $(document).ready(function () {
   // Take photo button
   $('#btn-text').click(function() {
     console.log("recording gif...");
-    mainCanvas.saveGif();
-    console.log("done recording...");
+
+    CAPTURING = true;
+    captureTimer = MAIN_FRAME_RATE * DURATION;
+    capturer.start();
   });
 
   //Click preview, change main to that filter
@@ -12,9 +14,4 @@ $(document).ready(function () {
     $('#main-camera').removeClass().addClass(filter);
   });
 
-  //click main, back to no-filter
-  // $('#main-camera').click(function() {
-  //   var filter = 'no-filter';
-  //   $('#main-camera').addClass(filter);
-  // });
 });
